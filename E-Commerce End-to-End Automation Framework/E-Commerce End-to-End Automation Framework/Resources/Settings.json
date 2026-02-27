@@ -1,0 +1,69 @@
+{
+  "browserName": "chrome",
+  "isRemote": false,
+  "remoteConnectionUrl": "http://qa-auto-nexus:4444/wd/hub",
+  "isElementHighlightEnabled": true,
+
+  "driverSettings": {
+    "chrome": {
+      "webDriverVersion": "MatchingBrowser",
+
+      "capabilities": {
+        "enableVNC": true,
+        "unhandledPromptBehavior": "ignore"
+      },
+
+      "options": {
+        "intl.accept_languages": "en",
+
+        "safebrowsing.enabled": "true",
+        "profile.default_content_settings.popups": "0",
+        "disable-popup-blocking": "true",
+
+        "download.prompt_for_download": "false",
+        "download.default_directory": "..\\\\Resources",
+
+        "credentials_enable_service": false,
+        "profile.password_manager_enabled": false
+      },
+
+      "excludedArguments": [
+        "enable-automation",
+        "enable-password-manager-reauthentication"
+      ],
+
+      "startArguments": [
+        "--incognito",
+        "--disable-infobars",
+        "--disable-notifications",
+        "--disable-save-password-bubble",
+        "--disable-autofill-keyboard-accessory-view"
+      ],
+
+      "pageLoadStrategy": "Normal"
+    }
+  },
+
+  "timeouts": {
+    "timeoutImplicit": 0,
+    "timeoutCondition": 30,
+    "timeoutScript": 10,
+    "timeoutPageLoad": 60,
+    "timeoutPollingInterval": 300,
+    "timeoutCommand": 60
+  },
+
+  "retry": {
+    "number": 2,
+    "pollingInterval": 300
+  },
+
+  "logger": {
+    "language": "en",
+    "logPageSource": true
+  },
+
+  "elementCache": {
+    "isEnabled": false
+  }
+}
