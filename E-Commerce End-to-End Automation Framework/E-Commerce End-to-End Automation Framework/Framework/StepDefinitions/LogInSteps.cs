@@ -1,4 +1,6 @@
-﻿using E_Commerce_End_to_End_Automation_Framework.Framework.Pages;
+﻿using Aquality.Selenium.Browsers;
+using Aquality.Selenium.Core.Utilities;
+using E_Commerce_End_to_End_Automation_Framework.Framework.Pages;
 using TechTalk.SpecFlow;
 
 namespace E_Commerce_End_to_End_Automation_Framework.Framework.StepDefinitions
@@ -8,6 +10,7 @@ namespace E_Commerce_End_to_End_Automation_Framework.Framework.StepDefinitions
     {
         LogInPage logInPage = new();
         private User user;
+        private static readonly JsonSettingsFile config = new("config.json");
 
         private void LoadValidUser()
         {
@@ -89,5 +92,17 @@ namespace E_Commerce_End_to_End_Automation_Framework.Framework.StepDefinitions
             Assert.That(logInPage.GetLockedUserLoginErrorMessage(), Is.EqualTo("Epic sadface: Username is required"));
         }
 
+        [Given(@"I open inventory page")]
+        public void OpenSpecialTestPage()
+        {
+            // Intentionally left empty.
+            // Navigation is handled by BeforeScenario hook.
+        }
+
+        [Then(@"I verify need to login error message")]
+        public void VerifyNeedToLoginErrorMessage()
+        {
+            Assert.That(logInPage.GetLockedUserLoginErrorMessage(), Is.EqualTo("Epic sadface: You can only access '/inventory.html' when you are logged in."));
+        }
     }
 }

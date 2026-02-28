@@ -15,6 +15,7 @@ namespace E_Commerce_End_to_End_Automation_Framework.Framework.Pages
         private ITextBox PostalCodeField => ElementFactory.GetTextBox(By.Id("postal-code"), "Postal code field");
         private IButton FinishBtn => ElementFactory.GetButton(By.Id("finish"), "Finish button");
         private ILabel CompleteHeader => ElementFactory.GetLabel(By.CssSelector("[data-test='complete-header']"), "Complete order header");
+        private IList<IElement> CartItems => ElementFactory.FindElements<IElement>(By.XPath("//div[@data-test='inventory-item']"));
         public CheckoutPage() : base(By.XPath(string.Format(LocatorConstants.PreciseTextLocator, PageName)), PageName)
         {
         }
@@ -48,6 +49,10 @@ namespace E_Commerce_End_to_End_Automation_Framework.Framework.Pages
         public string GetCompleteHeaderText()
         {
             return CompleteHeader.Text;
+        }
+        public void VerifyMoreThanOneProduct()
+        {
+            Assert.IsTrue(CartItems.Count > 1, "Checkout summary does not contain more than one product");
         }
     }
 }
