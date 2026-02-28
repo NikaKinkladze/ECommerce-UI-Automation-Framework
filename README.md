@@ -1,188 +1,151 @@
-🔐 Enterprise Quality E-Commerce Automation Framework
-🚀 Overview
+🔐 E-Commerce End-to-End Automation Framework
+📌 Project Overview
 
-This project is a professional UI automation testing framework designed to validate critical workflows of an e-commerce application.
+This project is an automated UI testing framework for an e-commerce web application.
 
-The framework is built with maintainability, readability, and practical test automation engineering principles in mind.
+The framework validates core user workflows including authentication, product management, cart operations, checkout processing, and edge-case behavior.
 
-It demonstrates real-world automation testing capabilities using C#, NUnit, SpecFlow BDD, and Aquality Selenium.
+The project is implemented using C#, NUnit, SpecFlow (BDD), and Aquality Selenium, following the Page Object Model (POM) design pattern.
 
-The solution focuses on validating authentication security, product workflow correctness, cart consistency, checkout reliability, and edge-case behavior.
+🛠 Technologies Used
 
-🎯 Engineering Objectives
+Programming Language: C#
 
-Validate user authentication workflows
+Testing Framework: NUnit
 
-Ensure product sorting and cart management correctness
+BDD Framework: SpecFlow
 
-Verify checkout process integrity
+Automation Library: Aquality Selenium
 
-Detect session handling anomalies
+Architecture Pattern: Page Object Model
 
-Improve regression testing reliability
+Assertion Library: NUnit Assertions
 
-🧠 Architecture Design
-
-The framework follows a Layered Automation Architecture.
-
-Feature Layer (BDD Scenarios)
-↓
-Step Definition Layer
-↓
-Page Object Layer (POM Implementation)
-↓
-Selenium Interaction Layer (Aquality Framework)
-Key Design Patterns Used
-
-Page Object Model (POM)
-
-Behavior Driven Development (BDD)
-
-Test Data Abstraction
-
-Component Encapsulation
-
-🛠 Technology Stack
-Category	Technology
-Language	C#
-Testing Framework	NUnit
-BDD Framework	SpecFlow
-Automation Library	Aquality Selenium
-UI Driver	Selenium WebDriver
-Assertion Library	NUnit Assertions
-🔐 Authentication Testing
-
-The framework validates multiple login behaviors:
-
-Successful authentication flow
-
-Locked user access restriction
-
-Invalid credential detection
-
-Empty input validation
-
-Security-related UI responses are verified through error message assertions.
-
-🛒 Product Module Automation
-Sorting Validation
-
-Price sorting verification (Low → High)
-
-Cart Interaction Testing
-
-Multi-product selection
-
-Randomized cart item removal
-
-Cart badge count synchronization
-
-Randomized testing is used to improve defect discovery probability.
-
-🛍 Cart Management Testing
+📂 Project Structure
+Framework
+├── Pages
+│   ├── LogInPage
+│   ├── ProductsPage
+│   ├── CartPage
+│   └── CheckoutPage
+│
+├── StepDefinitions
+│   ├── LoginSteps
+│   ├── ProductSteps
+│   ├── CartSteps
+│   └── CheckoutSteps
+│
+├── Helpers
+└── Hooks
+🔐 Login Module Testing
 
 The framework validates:
 
-Cart state integrity
+Successful login workflow
 
-Product removal functionality
+Locked user access validation
 
-UI badge count updates
+Invalid credential handling
 
-💳 Checkout Workflow Validation
+Empty field validation
 
-The checkout pipeline is tested as:
+🛒 Product Module Testing
+Sorting Validation
 
-Product Selection
-→ Cart Navigation
-→ Checkout Form Input
-→ Order Completion
-→ Confirmation Validation
-Validation Scenarios
+Verify product price sorting (low → high)
 
-Required field error detection
+Cart Interaction Testing
 
-Successful order confirmation
+Add multiple products to cart
 
-🚨 Edge Case Testing Strategy
+Random product removal
 
-The framework also evaluates system resilience through:
+Cart badge count verification
 
-Unauthorized Access Protection
+🛍 Cart Module Testing
 
-Direct inventory URL access without login
+Verify cart item operations
 
-Session Stability
+Validate product removal functionality
 
-Page refresh behavior during checkout process
+💳 Checkout Module Testing
+Validation Testing
 
-📊 Test Execution & Reporting
+Required field validation
 
-The project supports standard .NET test execution.
+Positive Workflow Testing
 
-Recommended reporting options:
+Complete purchase simulation
 
-NUnit execution output
+Order confirmation verification
 
-SpecFlow living documentation reports
+Checkout workflow:
 
-🔧 Code Quality Practices
+Add Product → Cart → Checkout → Form Input → Finish → Confirmation
+🚨 Edge Case Testing
 
-✔ Separation of test logic and UI interaction layers
-✔ Reusable page components
-✔ Test data abstraction
-✔ BDD scenario readability
-✔ Maintainable locator strategy
+The framework also tests:
 
-⚠️ Current Improvement Opportunities (Professional Transparency)
+Direct inventory page access without authentication
 
-These are honest engineering improvement areas:
+Page refresh behavior during checkout workflow
 
-Add dependency injection for page objects
+⚙️ Setup & Running Tests
+Prerequisites
 
-Introduce structured logging framework
+.NET SDK installed
 
-Improve defensive programming in collection indexing
+Chrome browser installed
 
-Enhance checkout state validation beyond URL checking
+Visual Studio recommended
 
-Add parallel execution support
+Restore Dependencies
+dotnet restore
+Run Tests
 
-🔮 Future Engineering Enhancements
-⭐ CI/CD Integration
+Run all tests:
 
-GitHub Actions or Jenkins pipeline automation
+dotnet test
 
-⭐ Performance Validation Layer
+Run specific scenarios:
 
-Load testing extension
+dotnet test --filter TestCategory=Login
+📊 Reporting
 
-⭐ API Automation Integration
+Test execution results can be viewed using:
 
-Combine UI and backend validation
+NUnit test output
 
-⭐ Advanced Reporting
+SpecFlow documentation reports
 
-Allure reporting dashboard
+🔧 Design Principles Applied
 
-👨‍💻 Intended Role Level Demonstrated
+Separation of test logic and UI interaction
 
-This project demonstrates competency suitable for:
+Reusable page components
 
-Automation QA Engineer
+Data abstraction for test inputs
 
-Software Test Engineer
+BDD-style scenario specification
 
-SDET Entry → Mid Level
+🔮 Future Improvements
 
-📌 Project Purpose
+Add API automation layer
 
-This project was created for:
+Integrate CI/CD pipeline
 
-Professional portfolio demonstration
+Implement structured logging
 
-Automation testing skill validation
+Add parallel test execution
+
+Improve test data management
+
+👨‍💻 Project Purpose
+
+This project is created for:
+
+Demonstrating automation testing skills
+
+Portfolio presentation
 
 BDD framework practice
-
-Real-world regression testing simulation
