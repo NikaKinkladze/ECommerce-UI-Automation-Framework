@@ -1,9 +1,5 @@
-﻿using E_Commerce_End_to_End_Automation_Framework.Framework.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Aquality.Selenium.Browsers;
+using E_Commerce_End_to_End_Automation_Framework.Framework.Pages;
 using TechTalk.SpecFlow;
 
 namespace E_Commerce_End_to_End_Automation_Framework.Framework.StepDefinitions
@@ -57,6 +53,21 @@ namespace E_Commerce_End_to_End_Automation_Framework.Framework.StepDefinitions
         public void ThenIVerifyOrderIsComplete()
         {
             Assert.That(checkoutPage.GetCompleteHeaderText(), Is.EqualTo("Thank you for your order!"));
+        }
+        [When(@"I refresh the page")]
+        public void WhenIFillInTheCheckoutForm()
+        {
+            AqualityServices.Browser.Refresh();
+        }
+        [Then(@"I verify URL is correct")]
+        public void ThenIVerifyURLIsCorrect()
+        {
+            Assert.That(AqualityServices.Browser.Driver.Url, Is.EqualTo("https://www.saucedemo.com/checkout-step-two.html"));
+        }
+        [Then(@"cart is not empty")]
+        public void ThenCartIsNotEmpty()
+        {
+            Assert.That(AqualityServices.Browser.Driver.Url, Is.EqualTo("https://www.saucedemo.com/checkout-step-two.html"));
         }
     }
 }

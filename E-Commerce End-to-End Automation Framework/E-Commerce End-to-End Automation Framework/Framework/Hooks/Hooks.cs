@@ -16,6 +16,12 @@ namespace E_Commerce_End_to_End_Automation_Framework.Framework
             browser.Maximize();
             browser.GoTo(settings.GetValue<string>("url"));
         }
+        [BeforeScenario("SpecialUrl")]
+        public void OpenSpecialUrl()
+        {
+            browser.Maximize();
+            browser.GoTo(settings.GetValue<string>("specliaUrl"));
+        }
 
         [AfterScenario]
         public void teardown()
